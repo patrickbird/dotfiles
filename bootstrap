@@ -12,3 +12,9 @@ do
     cp $DOTFILE $HOME_FILENAME
 done
 
+VUNDLE_DIR="$HOME/.vim/bundle"
+if [ ! -d $VUNDLE_DIR ]; then
+    echo "Vundle doesn't exist.  Cloning vundle..."
+    git clone git@github.com:VundleVim/Vundle.vim.git $VUNDLE_DIR/Vundle.vim
+fi
+
