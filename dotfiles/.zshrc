@@ -19,3 +19,9 @@ export PATH="/usr/local/sbin:$PATH"
 # Set delay to 0.1 seconds for vim mode
 export KEYTIMEOUT=1
 
+ZSH_GIT_FILEPATH="$HOME/.config/zsh-git-prompt/zshrc.sh"
+if [ -f $ZSH_GIT_FILEPATH ]; then
+    source $ZSH_GIT_FILEPATH
+    PROMPT='%B%m%~%b$(git_super_status) %# '
+fi
+

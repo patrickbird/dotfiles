@@ -18,3 +18,9 @@ if [ ! -d $VUNDLE_DIR ]; then
     git clone git@github.com:VundleVim/Vundle.vim.git $VUNDLE_DIR/Vundle.vim
 fi
 
+if [ ! -d "$HOME/.config/zsh-git-prompt" ]; then
+    git clone git@github.com:olivierverdier/zsh-git-prompt.git $HOME/.config/zsh-git-prompt
+fi
+
+source $HOME/.zshrc
+
