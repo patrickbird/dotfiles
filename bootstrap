@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+for filename in $(ls -A dotfiles)
+do
+    DOTFILE="dotfiles/$filename"
+    HOME_FILENAME="$HOME/$filename"
+
+    if [ -f $HOME_FILENAME ]; then
+        cp $HOME_FILENAME "$HOME_FILENAME.bak"
+    fi
+
+    cp $DOTFILE $HOME_FILENAME
+done
+
