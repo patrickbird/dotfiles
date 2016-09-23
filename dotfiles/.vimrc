@@ -79,3 +79,10 @@ if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+" Remap 'count next' and 'count previous' for grep
+nmap <silent> <C-N> :cn<CR>zv
+nmap <silent> <C-P> :cp<CR>zv
+
+" Open quickfix for all grep invocations
+autocmd QuickFixCmdPost *grep* cwindow
+
