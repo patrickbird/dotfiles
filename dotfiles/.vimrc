@@ -15,6 +15,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'pangloss/vim-javascript'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'fatih/vim-go'
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 " End of vundle
@@ -74,6 +75,9 @@ set si "Smart indent
 set wrap "Wrap lines
 set number "Line numbers
 
+" Enable highlight search
+set hlsearch
+
 " Remember the last line you left off at
 if has("autocmd")
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -85,4 +89,12 @@ nmap <silent> <C-P> :cp<CR>zv
 
 " Open quickfix for all grep invocations
 autocmd QuickFixCmdPost *grep* cwindow
+
+
+set background=light
+colorscheme solarized
+
+hi Search cterm=NONE ctermfg=grey ctermbg=blue
+hi Visual cterm=NONE ctermfg=grey ctermbg=blue
+
 
